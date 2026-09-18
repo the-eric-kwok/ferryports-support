@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="FerryPorts privacy policy: on-device configuration, connection history, location permissions, and server data processing.">
+<title>Privacy Policy · FerryPorts</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="alternate" hreflang="en" href="../en/privacy.html">
+<link rel="alternate" hreflang="zh-Hans" href="../zh/privacy.html">
+<link rel="alternate" hreflang="x-default" href="../en/privacy.html">
+<link rel="icon" type="image/svg+xml" href="../app-icon.svg">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<nav aria-label="Main navigation"><a class="brand" href="../en/index.html"><img class="app-icon" src="../app-icon.svg" width="32" height="32" alt="">FerryPorts</a><a href="../en/privacy.html" aria-current="page">Privacy Policy</a><a href="../en/support.html">Support</a><a class="language-link" href="../zh/privacy.html" lang="zh-Hans" hreflang="zh-Hans">中文</a></nav>
+<main id="content" tabindex="-1">
+<p class="eyebrow">PRIVACY POLICY</p>
+<h1>Privacy Policy</h1>
+<p class="muted">Updated September 18, 2026.</p>
+<p>FerryPorts is developed by 郭耀铭 (Guo Yaoming) and connects to frps servers you choose. This policy covers the app and this support website.</p>
+<section aria-label="Privacy overview">
+<ul class="privacy-overview">
+<li><strong>No ads or usage tracking</strong><p>No FerryPorts account is required. The app has no advertising, advertising tracking, or usage analytics service.</p></li>
+<li><strong>Settings and history stay on your device</strong><p>Server configuration and connection history are encrypted locally. The app does not transmit diagnostic logs outside your device or upload location or connection history to the developer or frps server.</p></li>
+<li><strong>Location is your choice</strong><p>With permission, the app labels active connections with approximate locations. Each connection keeps only its latest location, not a movement trail. You can turn off location access in iOS Settings.</p></li>
+<li><strong>Connecting requires network access</strong><p>Your selected servers receive data needed for connection setup, authentication, and proxy traffic. Apple Maps and our website host, GitHub, also process request information needed to provide their services.</p></li>
+<li><strong>You can delete local data</strong><p>You can delete connection records or profiles. Delete profiles in the app to remove their configuration and keys; uninstalling alone may leave Keychain items behind. Local deletion does not remove server logs.</p></li>
+</ul>
+</section>
+<section aria-labelledby="details-title">
+<h2 id="details-title">How your data is handled</h2>
+<p class="muted">Expand a heading for storage details, third-party services, and deletion limits.</p>
+<details class="privacy-detail">
+<summary>On-device data</summary>
+<div class="detail-content">
+<p>Server settings, authentication information, and proxy configuration are stored in AES-GCM encrypted documents. Document keys are stored in device-bound system Keychain items. Profile names, enabled states, and document identifiers are stored in local app preferences; the app does not insert authentication passwords into profile names. Encrypted configuration and connection-history files are excluded from system backups.</p>
+<p>Current-session diagnostic logs are kept in a bounded memory buffer for display in the app. They may contain server addresses, proxy names, timestamps, and errors. The app does not transmit these logs outside the device.</p>
+</div>
+</details>
+<details class="privacy-detail">
+<summary>Location and connection history</summary>
+<div class="detail-content">
+<p>With your permission, while a connection is starting or running, the app uses approximate location to label connection records. Each session keeps only its latest location, not a movement trail, altitude, speed, or heading. Each profile retains up to 50 recent records, including start time, latest activity time, and outcome.</p>
+<p>These records are encrypted locally. The app itself does not upload location or connection history to the developer or frps server. Maps use Apple MapKit. Requests and processing required by Apple's map service are governed by <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>; maps are not promised to work entirely offline.</p>
+<p>You can change or revoke location access in iOS Settings. Background location labels active connection records and may also allow a connection to run longer in the background. Permission changes, force quitting, or system termination may interrupt this behavior.</p>
+</div>
+</details>
+<details class="privacy-detail">
+<summary>Your selected servers</summary>
+<div class="detail-content">
+<p>Enabling a profile sends data required for connection setup, authentication, and proxy negotiation to your selected frps server. The server and communication endpoints can receive network addresses, connection times, authentication-protocol data, and configured proxy traffic. Recipients, encryption, log retention, and processing depend on your server, services, and configuration. Only connect to trusted, authorized servers and consult their operators' privacy policies. Local storage does not mean no network transmission; network communication is central to the app's functionality.</p>
+</div>
+</details>
+<details class="privacy-detail">
+<summary>What remains after you delete your data?</summary>
+<div class="detail-content">
+<p>You can delete individual connection records or clear history. Deleting a profile removes its encrypted configuration document, connection history, and document key. Uninstalling normally removes the app's local data container, but iOS Keychain items may remain. Delete profiles inside the app first when you want to remove their keys. Local deletion does not erase server logs, copies you saved elsewhere, or content you posted to another platform.</p>
+</div>
+</details>
+<details class="privacy-detail">
+<summary>What information is used when you visit this website or contact us?</summary>
+<div class="detail-content">
+<p>This website is hosted on GitHub Pages, with no added analytics scripts, ads, or tracking cookies. GitHub may process IP addresses and technical request information to provide and protect hosting, under the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub Privacy Statement</a>. If you contact us through GitHub, GitHub and maintainers process the content you provide. Public issues are visible to everyone. You can also email <a href="mailto:eric_kwoc@icloud.com">eric_kwoc@icloud.com</a>; the author receives and handles your feedback without displaying it publicly. Relevant email providers handle email delivery and storage. Do not post credentials, full configurations, or screenshots containing personal locations.</p>
+</div>
+</details>
+</section>
+<h2>Contact and policy updates</h2>
+<p>For privacy questions or data requests, email <a href="mailto:eric_kwoc@icloud.com">eric_kwoc@icloud.com</a> or visit the <a href="../en/support.html">support page</a>. Do not send credentials, full configurations, or screenshots containing personal locations.</p>
+<p>Policy changes will be reflected on this page with an updated date. Material changes will also be communicated where appropriate.</p>
+</main>
+<footer><span>FerryPorts © 2026 郭耀铭</span><a href="../en/support.html">Contact & feedback</a></footer>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="FerryPorts 隐私政策：本机配置、连接记录、定位权限与服务器数据处理。">
+<title>隐私政策 · FerryPorts</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="alternate" hreflang="en" href="../en/privacy.html">
+<link rel="alternate" hreflang="zh-Hans" href="../zh/privacy.html">
+<link rel="alternate" hreflang="x-default" href="../en/privacy.html">
+<link rel="icon" type="image/svg+xml" href="../app-icon.svg">
+</head>
+<body>
+<a class="skip-link" href="#content">跳至正文</a>
+<nav aria-label="主导航"><a class="brand" href="../zh/index.html"><img class="app-icon" src="../app-icon.svg" width="32" height="32" alt="">FerryPorts</a><a href="../zh/privacy.html" aria-current="page">隐私政策</a><a href="../zh/support.html">支持</a><a class="language-link" href="../en/privacy.html" lang="en" hreflang="en">English</a></nav>
+<main id="content" tabindex="-1">
+<p class="eyebrow">隐私与数据</p>
+<h1>隐私政策</h1>
+<p class="muted">更新日期：2026 年 9 月 18 日</p>
+<p>FerryPorts 由郭耀铭开发，用于连接你自行选择的 frps 服务器。本政策适用于 App 和本支持网站。</p>
+<section aria-label="隐私概要">
+<ul class="privacy-overview">
+<li><strong>没有广告或行为追踪</strong><p>无需注册 FerryPorts 账号，也没有内置广告、广告追踪或使用行为分析服务。</p></li>
+<li><strong>配置和记录保存在设备上</strong><p>服务器配置与连接记录在本机加密保存。App 不会将运行日志外传，也不会将位置或连接历史上传给开发者或 frps 服务器。</p></li>
+<li><strong>定位由你决定</strong><p>授权后，App 才会为活跃连接标注大致位置；每次连接只保留最近一次位置，不记录移动轨迹。你可以随时在 iOS 设置中关闭定位。</p></li>
+<li><strong>连接服务需要联网</strong><p>你选择的服务器会接收建立连接、认证和代理通信所需的数据。Apple 地图和网站托管方 GitHub 也会处理提供服务所需的请求信息。</p></li>
+<li><strong>你可以删除本机数据</strong><p>可以删除连接记录或配置。若要清理配置及其密钥，请先在 App 内删除配置；仅卸载 App 可能留下钥匙串项目。服务器日志不受本机删除操作影响。</p></li>
+</ul>
+</section>
+<section aria-labelledby="details-title">
+<h2 id="details-title">数据处理详情</h2>
+<p class="muted">展开对应标题，了解具体保存内容、第三方服务和删除范围。</p>
+<details class="privacy-detail">
+<summary>保存在设备上的数据</summary>
+<div class="detail-content">
+<p>服务器地址、认证信息及代理配置保存在本机加密配置文档中，采用 AES-GCM 加密，文档密钥存放在设备绑定的系统 Keychain 中。配置名称、启用状态及文档标识等索引保存在 App 的本机偏好设置中；App 不会将认证密码写入配置名称。加密配置与连接记录文件设置为排除系统备份。</p>
+<p>运行日志用于在 App 内排查连接问题，当前启动会话的日志保存在有限大小的内存缓冲区中。日志可能包含服务器地址、代理名称、时间和错误信息。App 不会将这些日志外传。</p>
+</div>
+</details>
+<details class="privacy-detail">
+<summary>位置与连接记录</summary>
+<div class="detail-content">
+<p>在你授权且存在启动中或运行中的连接时，App 使用位置为连接记录标注大致地点。每条会话只保留最近一次位置，不保存移动轨迹、海拔、速度或方向；每个配置最多保留最近 50 条连接记录。</p>
+<p>连接记录还包括开始时间、最近活动时间及连接结果，使用本机加密存储。App 自身不把这些位置或连接历史上传给开发者或 frps 服务器。地图使用 Apple MapKit，地图服务所需请求及相关处理受 <a href="https://www.apple.com/legal/privacy/">Apple 隐私政策</a>约束；本政策不承诺 Apple 地图服务完全离线。</p>
+<p>你可以在 iOS 设置中关闭或调整定位权限。后台定位仅用于活跃连接的记录标注，也可能延长连接在后台的运行时间；撤销权限、强制退出或系统终止可能中断该行为。</p>
+</div>
+</details>
+<details class="privacy-detail">
+<summary>连接到你选择的服务器</summary>
+<div class="detail-content">
+<p>启用配置会向你指定的 frps 服务器发送建立连接、认证和代理协商所需的数据。服务器及实际通信端点可接收到网络地址、连接时间、认证协议数据，以及由配置决定的代理业务流量。具体接收方、加密保护、日志保留与用途取决于你选择的服务器、通信服务及配置。请仅连接可信且获授权的服务器，并向服务器运营者了解其隐私政策。</p>
+<p>“本机存储”不意味着 App 完全不传输数据。FerryPorts 的核心功能需要网络通信；本政策不代表第三方服务器运营者作出承诺。</p>
+</div>
+</details>
+<details class="privacy-detail">
+<summary>删除数据后，还会留下什么？</summary>
+<div class="detail-content">
+<p>你可以删除单条连接记录或清空记录。删除配置会清理关联的加密配置文档、连接记录及文档密钥。卸载 App 通常会移除其本机数据容器，但 iOS Keychain 项目可能保留，因此不应把卸载理解为清除所有密钥的保证；如需清理配置，请先在 App 内删除。App 的本机删除操作不会删除服务器端日志、你自行保存的副本或发布到其他平台的内容。</p>
+</div>
+</details>
+<details class="privacy-detail">
+<summary>访问网站或联系我们时，会用到哪些信息？</summary>
+<div class="detail-content">
+<p>本网站使用 GitHub Pages 托管，无自行添加的分析脚本、广告或追踪 Cookie。访问网站时，GitHub 可能处理 IP 地址及技术请求信息，以提供和保护托管服务，适用 <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub 隐私声明</a>。若你主动通过 GitHub 提交问题，GitHub 与维护者会处理你提供的内容；公开 Issue 对所有人可见。你也可以发送邮件至 <a href="mailto:eric_kwoc@icloud.com">eric_kwoc@icloud.com</a>，由作者接收并处理反馈，不会公开展示；邮件的传输与存储由相关邮件服务商提供。请勿提交凭据、完整配置或包含个人位置的截图。</p>
+</div>
+</details>
+</section>
+<h2>联系与政策变更</h2>
+<p>隐私问题或数据处理请求，可以发送邮件至 <a href="mailto:eric_kwoc@icloud.com">eric_kwoc@icloud.com</a>，或查看<a href="../zh/support.html">支持页面</a>。请勿发送凭据、完整配置或包含个人位置的截图。</p>
+<p>我们会在本页面更新政策与日期；涉及数据处理的重要变化也会在适当位置说明。</p>
+</main>
+<footer><span>FerryPorts © 2026 郭耀铭</span><a href="../zh/support.html">联系与反馈</a></footer>
+</body>
+</html>
