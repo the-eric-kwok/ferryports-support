@@ -17,12 +17,12 @@
 <main id="content" tabindex="-1">
 <p class="eyebrow">PRIVACY POLICY</p>
 <h1>Privacy Policy</h1>
-<p class="muted">Updated September 18, 2026.</p>
+<p class="muted">Updated September 20, 2026.</p>
 <p>FerryPorts is developed by 郭耀铭 (Guo Yaoming) and connects to frps servers you choose. This policy covers the app and this support website.</p>
 <section aria-label="Privacy overview">
 <ul class="privacy-overview">
 <li><strong>No ads or usage tracking</strong><p>No FerryPorts account is required. The app has no advertising, advertising tracking, or usage analytics service.</p></li>
-<li><strong>Settings and history stay on your device</strong><p>Server configuration and connection history are encrypted locally. The app does not transmit diagnostic logs outside your device or upload location or connection history to the developer or frps server.</p></li>
+<li><strong>Settings and history stay on your device</strong><p>Server configuration and connection history are encrypted locally. The app does not automatically upload diagnostic logs, location, or connection history to the developer. Connection protocols and features you enable can transmit configuration and other data as described below.</p></li>
 <li><strong>Location is your choice</strong><p>With permission, the app labels active connections with approximate locations. Each connection keeps only its latest location, not a movement trail. You can turn off location access in iOS Settings.</p></li>
 <li><strong>Connecting requires network access</strong><p>Your selected servers receive data needed for connection setup, authentication, and proxy traffic. Apple Maps and our website host, GitHub, also process request information needed to provide their services.</p></li>
 <li><strong>You can delete local data</strong><p>You can delete connection records or profiles. Delete profiles in the app to remove their configuration and keys; uninstalling alone may leave Keychain items behind. Local deletion does not remove server logs.</p></li>
@@ -35,7 +35,7 @@
 <summary>On-device data</summary>
 <div class="detail-content">
 <p>Server settings, authentication information, and proxy configuration are stored in AES-GCM encrypted documents. Document keys are stored in device-bound system Keychain items. Profile names, enabled states, and document identifiers are stored in local app preferences; the app does not insert authentication passwords into profile names. Encrypted configuration and connection-history files are excluded from system backups.</p>
-<p>Current-session diagnostic logs are kept in a bounded memory buffer for display in the app. They may contain server addresses, proxy names, timestamps, and errors. The app does not transmit these logs outside the device.</p>
+<p>Current-session diagnostic logs are kept in a bounded memory buffer for display in the app. They may contain server addresses, proxy names, timestamps, and errors. The app does not automatically upload these logs to the developer. If you copy or share log content, the recipient receives the content you provide.</p>
 </div>
 </details>
 <details class="privacy-detail">
@@ -49,7 +49,11 @@
 <details class="privacy-detail">
 <summary>Your selected servers</summary>
 <div class="detail-content">
-<p>Enabling a profile sends data required for connection setup, authentication, and proxy negotiation to your selected frps server. The server and communication endpoints can receive network addresses, connection times, authentication-protocol data, and configured proxy traffic. Recipients, encryption, log retention, and processing depend on your server, services, and configuration. Only connect to trusted, authorized servers and consult their operators' privacy policies. Local storage does not mean no network transmission; network communication is central to the app's functionality.</p>
+<p>Enabling a profile sends data required for connection setup, authentication, and proxy negotiation to your selected frps server. The frp login protocol includes the hostname returned by the operating system, operating-system type, processor architecture, frp version, login timestamp, session identifier, and configured user name, client identifier, and metadata. The hostname returned by iOS may be generic. These are connection-protocol fields, not a FerryPorts advertising identifier. The server also receives authentication-protocol data and proxy settings needed to provide the configured service.</p>
+<p>Your server and communication endpoints can receive IP addresses, connection times, and configured proxy traffic. Depending on the features you enable, DNS providers receive domain lookups; an OIDC authentication provider receives configured client credentials and token-request parameters; and XTCP NAT traversal contacts a STUN service to discover network addresses. frp defaults to stun.easyvoip.com:3478 when no alternative STUN server is configured; ordinary proxy connections do not require this XTCP discovery step. Proxy, authentication, and other endpoints can also be selected through your configuration.</p>
+<p>Configured certificate files, token files, and static-serving directories are limited to the app container. Paths and symbolic links that escape that boundary are rejected. Custom DNS queries are handled by the selected DNS service.</p>
+<p>If you enable the static_file plugin, requests through that service can retrieve readable files in its configured directory, including directory listings and file metadata such as size and modification time. HTTP responses may include a Last-Modified header. This is user-configured file serving, not diagnostic analytics. If you enable frp's management web server, reachable clients may obtain connection status and configuration information subject to the authentication and network settings you choose.</p>
+<p>Recipients, encryption, log retention, and processing depend on your server, services, and configuration. Only connect to trusted, authorized servers and consult their operators' privacy policies. Local storage does not mean no network transmission; network communication is central to the app's functionality.</p>
 </div>
 </details>
 <details class="privacy-detail">
