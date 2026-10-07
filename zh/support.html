@@ -24,6 +24,11 @@
 <h2>应用切换到后台后，连接中断怎么办？</h2>
 <p>建议授予 FerryPorts 后台定位权限：打开 iOS“设置”→“隐私与安全性”（旧版 iOS 为“隐私”）→“定位服务”→“FerryPorts”，将访问权限设为“始终”。如果暂时没有“始终”选项，请先在 App 内按提示允许定位，再返回设置查看。</p>
 <p>后台定位用于为活跃连接记录标注大致位置，也可能帮助连接在后台维持更久。应用存活仍受 iOS 调度和网络状态影响，请避免从多任务界面强制关闭 App。若连接已中断，可返回 App 查看状态与日志，并使用“立即重试”。</p>
+<h2>如何导入客户端证书与私钥？</h2>
+<p>打开「更多 → 证书与密钥 → 导入文件」，多选 PEM 证书、未加密私钥与 CA 文件；也可以从系统「文件」分享或打开到 FerryPorts。若系统没有为 <code>.key</code> 提供入口，请改名为 <code>.pem</code> 或使用应用内导入。</p>
+<p>每个文件限 1 MiB，不支持 PKCS#12 或加密私钥。可在可信电脑用 <code>openssl pkey -in encrypted.key -out private.pem</code> 移除私钥口令后再导入。</p>
+<p>点按证书或密钥，在“应用到…”中选择 Profile，即可覆盖对应 TLS 配置。普通证书、私钥、CA 分别配置 certFile、keyFile、trustedCaFile，合并文件同时配置证书和私钥。左滑可重命名或删除；重命名保留扩展名并同步 Profile 引用。同名替换文件后需重启相关 Profile。</p>
+<p>私钥以明文 PEM 保存在应用容器内，受首次解锁后的 iOS 文件保护、排除 iCloud／Finder 备份；没有应用层加密或导出入口。外部原文件由你管理。删除证书前，应用会提示受影响的 Profile。</p>
 <h2>反馈与隐私问题</h2>
 <p>你可以通过 <a href="https://github.com/the-eric-kwok/ferryports-support/issues">GitHub Issues</a> 或发送邮件至 <a href="mailto:eric_kwoc@icloud.com">eric_kwoc@icloud.com</a> 反馈问题。请附 App 版本、iOS 版本、复现步骤和经过脱敏的错误信息。</p>
 <p>GitHub Issues 公开可见；邮件直接发送给作者，不会公开展示。不要发送服务器凭据、完整 TOML、私钥、个人位置或含敏感信息的日志。涉及隐私的问题建议通过邮件联系作者。</p>
