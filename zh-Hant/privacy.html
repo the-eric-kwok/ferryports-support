@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="FerryPorts 隱私政策：本機設定、連線記錄、定位權限與伺服器資料處理。">
+<title>隱私政策 · FerryPorts</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="alternate" hreflang="en" href="../en/privacy.html">
+<link rel="alternate" hreflang="zh-Hans" href="../zh/privacy.html">
+<link rel="alternate" hreflang="zh-Hant" href="../zh-Hant/privacy.html">
+<link rel="alternate" hreflang="ja" href="../ja/privacy.html">
+<link rel="alternate" hreflang="ko" href="../ko/privacy.html">
+<link rel="alternate" hreflang="x-default" href="../en/privacy.html">
+<link rel="icon" type="image/svg+xml" href="../app-icon.svg">
+<script src="../language-switcher.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#content">跳至主要內容</a>
+<nav aria-label="主導覽"><a class="brand" href="../zh-Hant/index.html"><img class="app-icon" src="../app-icon.svg" width="32" height="32" alt="">FerryPorts</a><a href="../zh-Hant/privacy.html" aria-current="page">隱私政策</a><a href="../zh-Hant/support.html">支援</a>
+<div class="language-switcher">
+<button class="language-trigger" type="button" aria-label="選擇語言 · 繁體中文" aria-expanded="false" aria-controls="language-options" hidden><span lang="zh-Hant">繁體中文</span><svg class="language-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" focusable="false"><path d="m2 4 4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+<ul class="language-options" id="language-options" aria-label="選擇語言">
+<li><a href="../en/privacy.html" lang="en" hreflang="en">English</a></li>
+<li><a href="../zh/privacy.html" lang="zh-Hans" hreflang="zh-Hans">简体中文</a></li>
+<li><span lang="zh-Hant" aria-current="true">繁體中文<span aria-hidden="true"> ✓</span></span></li>
+<li><a href="../ja/privacy.html" lang="ja" hreflang="ja">日本語</a></li>
+<li><a href="../ko/privacy.html" lang="ko" hreflang="ko">한국어</a></li>
+</ul>
+</div>
+</nav>
+<main id="content" tabindex="-1">
+<p class="eyebrow">隱私權與資料</p>
+<h1>隱私政策</h1>
+<p class="muted">更新日期：2026 年 9 月 20 日</p>
+<p>FerryPorts 由郭耀铭開發，用於連線至你自行選擇的 frps 伺服器。本政策適用於 App 和本支援網站。</p>
+<section aria-label="隱私權概覽">
+<ul class="privacy-overview">
+<li><strong>沒有廣告或行為追蹤</strong><p>無需註冊 FerryPorts 帳號，也沒有內建廣告、廣告追蹤或使用行為分析服務。</p></li>
+<li><strong>設定和記錄儲存在裝置上</strong><p>伺服器設定與連線記錄在本機加密儲存。App 不會自動向開發者上傳執行記錄、位置或連線歷史。連線通訊協定及你主動啟用的功能可能傳輸設定或其他資料，詳細見下文。</p></li>
+<li><strong>定位由你決定</strong><p>授權後，App 才會為作用中的連線標註大致位置；每次連線只保留最近一次位置，不記錄移動軌跡。你可以隨時在 iOS 設定中關閉定位。</p></li>
+<li><strong>連線服務需要網路連線</strong><p>你選擇的伺服器會接收建立連線、驗證和代理通訊所需的資料。Apple 地圖和網站託管方 GitHub 也會處理提供服務所需的請求資訊。</p></li>
+<li><strong>你可以刪除本機資料</strong><p>可以刪除連線記錄或設定。若要清理設定及其金鑰，請先在 App 內刪除設定；僅解除安裝 App 可能留下 Keychain 項目。伺服器記錄不受本機刪除操作影響。</p></li>
+</ul>
+</section>
+<section aria-labelledby="details-title">
+<h2 id="details-title">資料處理詳細資訊</h2>
+<p class="muted">展開對應標題，了解儲存內容、第三方服務和刪除範圍。</p>
+<details class="privacy-detail">
+<summary>儲存在裝置上的資料</summary>
+<div class="detail-content">
+<p>伺服器位址、驗證資訊及代理設定儲存在本機加密設定檔案中，採用 AES-GCM 加密，檔案金鑰儲存在裝置綁定的系統 Keychain 中。設定名稱、啟用狀態及檔案識別碼等索引儲存在 App 的本機偏好設定中；App 不會將驗證密碼寫入設定名稱。加密設定與連線記錄檔案設定為排除系統備份。</p>
+<p>執行記錄用於在 App 內排解連線問題，目前執行工作階段的記錄儲存在有限大小的記憶體緩衝區中。記錄可能包含伺服器位址、代理名稱、時間和錯誤資訊。App 不會自動將這些記錄上傳給開發者。若你複製或分享記錄，接收方會收到你提供的內容。</p>
+</div>
+</details>
+<details class="privacy-detail">
+<summary>位置與連線記錄</summary>
+<div class="detail-content">
+<p>在你授權且存在啟動中或執行中的連線時，App 使用位置為連線記錄標註大致地點。每個工作階段只保留最近一次位置，不儲存移動軌跡、海拔、速度或方向；每個設定最多保留最近 50 筆連線記錄。</p>
+<p>連線記錄還包括開始時間、最近活動時間及連線結果，使用本機加密儲存。App 本身不會將這些位置或連線歷史上傳給開發者或 frps 伺服器。地圖使用 Apple MapKit，地圖服務所需請求及相關處理受 <a href="https://www.apple.com/legal/privacy/">Apple 隱私政策</a>約束；本政策不承諾 Apple 地圖服務完全離線。</p>
+<p>你可以在 iOS 設定中關閉或調整定位權限。背景定位僅用於作用中連線的記錄標註，也可能延長連線在背景的執行時間；撤銷權限、強制關閉 App 或系統終止可能中斷該行為。</p>
+</div>
+</details>
+<details class="privacy-detail">
+<summary>連線到你選擇的伺服器</summary>
+<div class="detail-content">
+<p>啟用設定會向你指定的 frps 伺服器傳送建立連線、驗證和代理協商所需的資料。frp 登入通訊協定包含作業系統傳回的主機名稱、作業系統類型、處理器架構、frp 版本、登入時間戳記、工作階段識別碼，以及設定中的使用者名稱、用戶端識別碼和中繼資料。iOS 傳回的主機名稱可能是通用名稱。這些資訊屬於連線通訊協定欄位，不是 FerryPorts 的廣告識別碼。伺服器還會接收驗證通訊協定資料及提供對應服務所需的代理設定。</p>
+<p>伺服器及實際通訊端點可接收到 IP 位址、連線時間及設定決定的代理業務流量。根據你啟用的功能，DNS 服務商會接收網域名稱查詢；OIDC 驗證服務商會接收設定的用戶端驗證資訊和權杖請求參數；XTCP 穿透會聯絡 STUN 服務以探測網路位址。未另行設定 STUN 伺服器時，frp 預設使用 stun.easyvoip.com:3478；一般代理連線不需要這一步 XTCP 位址探測。代理、驗證及其他通訊端點也可能由你的設定指定。</p>
+<p>匯入的憑證與私鑰以明文 PEM 儲存在 App 容器內，受首次解鎖後的 iOS 檔案保護且不納入 iCloud／Finder 備份，不採用設定檔案的應用程式層級加密。你可以在「更多 → 憑證與金鑰」中刪除這些檔案；刪除 Profile 不會自動刪除可能被其他 Profile 共用的憑證。外部原始檔案和副本由你自行管理。</p>
+<p>設定引用的憑證、權杖檔案及靜態服務目錄僅限 App 容器內；越界路徑和超出容器範圍的符號連結會被拒絕。自訂 DNS 查詢由所選 DNS 服務處理。</p>
+<p>若你啟用 static_file 外掛程式，經由該服務發起的請求可以取得設定目錄中可讀取的檔案、目錄清單及檔案大小和修改時間等中繼資料；HTTP 回應可能包含 Last-Modified 標頭。這屬於你設定的檔案服務，不是診斷分析。若你啟用 frp 管理網頁服務，可存取該介面的用戶端可能取得連線狀態及設定資訊，實際存取範圍取決於你設定的驗證和網路條件。</p>
+<p>實際接收方、加密保護、記錄保留與用途取決於你選擇的伺服器、通訊服務及設定。請僅連線可信任且獲授權的伺服器，並向伺服器營運者了解其隱私政策。</p>
+<p>「本機儲存」不意味著 App 完全不傳輸資料。FerryPorts 的核心功能需要網路通訊；本政策不代表第三方伺服器營運者作出承諾。</p>
+</div>
+</details>
+<details class="privacy-detail">
+<summary>刪除資料後，還會留下什麼？</summary>
+<div class="detail-content">
+<p>你可以刪除單筆連線記錄或清空記錄。刪除設定會清理關聯的加密設定檔案、連線記錄及檔案金鑰。解除安裝 App 通常會移除其本機資料容器，但 iOS Keychain 項目可能保留，因此不應把解除安裝理解為清除所有金鑰的保證；如需清理設定，請先在 App 內刪除。App 的本機刪除操作不會刪除伺服器端記錄、你自行儲存的副本或發佈到其他平台的內容。</p>
+</div>
+</details>
+<details class="privacy-detail">
+<summary>瀏覽網站或聯絡我們時，會用到哪些資訊？</summary>
+<div class="detail-content">
+<p>本網站使用 GitHub Pages 託管，無自行加入的分析腳本、廣告或追蹤 Cookie。瀏覽網站時，GitHub 可能處理 IP 位址及技術請求資訊，以提供和保護託管服務，適用 <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub 隱私聲明</a>。若你主動透過 GitHub 提交問題，GitHub 與維護者會處理你提供的內容；公開 Issue 對所有人可見。你也可以傳送電子郵件至 <a href="mailto:eric_kwoc@icloud.com">eric_kwoc@icloud.com</a>，由作者接收並處理回饋，不會公開顯示；電子郵件的傳輸與儲存由相關電子郵件服務商提供。請勿提交驗證資訊、完整設定或包含個人位置的螢幕截圖。</p>
+</div>
+</details>
+</section>
+<h2>聯絡與政策變更</h2>
+<p>隱私權問題或資料處理請求，可以傳送電子郵件至 <a href="mailto:eric_kwoc@icloud.com">eric_kwoc@icloud.com</a>，或查看<a href="../zh-Hant/support.html">支援頁面</a>。請勿傳送驗證資訊、完整設定或包含個人位置的螢幕截圖。</p>
+<p>我們會在本頁面更新政策與日期；涉及資料處理的重要變化也會在適當位置說明。</p>
+</main>
+<footer><span>FerryPorts © 2026 郭耀铭</span><a href="../zh-Hant/support.html">聯絡與回饋</a></footer>
+</body>
+</html>
