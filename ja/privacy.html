@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="FerryPorts のプライバシーポリシー：デバイス内の設定、接続履歴、位置情報の許可、サーバーによるデータ処理。">
+<title>プライバシーポリシー · FerryPorts</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="alternate" hreflang="en" href="../en/privacy.html">
+<link rel="alternate" hreflang="zh-Hans" href="../zh/privacy.html">
+<link rel="alternate" hreflang="ja" href="../ja/privacy.html">
+<link rel="alternate" hreflang="ko" href="../ko/privacy.html">
+<link rel="alternate" hreflang="x-default" href="../en/privacy.html">
+<link rel="icon" type="image/svg+xml" href="../app-icon.svg">
+<script src="../language-switcher.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#content">本文へスキップ</a>
+<nav aria-label="メインナビゲーション"><a class="brand" href="../ja/index.html"><img class="app-icon" src="../app-icon.svg" width="32" height="32" alt="">FerryPorts</a><a href="../ja/privacy.html" aria-current="page">プライバシーポリシー</a><a href="../ja/support.html">サポート</a>
+<div class="language-switcher">
+<button class="language-trigger" type="button" aria-label="言語を選択 · 日本語" aria-expanded="false" aria-controls="language-options" hidden><span lang="ja">日本語</span><svg class="language-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" focusable="false"><path d="m2 4 4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+<ul class="language-options" id="language-options" aria-label="言語を選択">
+<li><a href="../en/privacy.html" lang="en" hreflang="en">English</a></li>
+<li><a href="../zh/privacy.html" lang="zh-Hans" hreflang="zh-Hans">中文</a></li>
+<li><span lang="ja" aria-current="true">日本語<span aria-hidden="true"> ✓</span></span></li>
+<li><a href="../ko/privacy.html" lang="ko" hreflang="ko">한국어</a></li>
+</ul>
+</div>
+</nav>
+<main id="content" tabindex="-1">
+<p class="eyebrow">プライバシーポリシー</p>
+<h1>プライバシーポリシー</h1>
+<p class="muted">更新日：2026年9月20日。</p>
+<p>FerryPorts は 郭耀铭（Guo Yaoming）が開発し、ユーザーが選択した frps サーバーに接続するアプリです。本ポリシーは、アプリとこのサポートサイトに適用されます。</p>
+<section aria-label="プライバシーの概要">
+<ul class="privacy-overview">
+<li><strong>広告や利用状況の追跡はありません</strong><p>FerryPorts のアカウントは不要です。アプリには広告、広告トラッキング、利用状況の分析サービスはありません。</p></li>
+<li><strong>設定と履歴はデバイス内に保存されます</strong><p>サーバー設定と接続履歴はローカルで暗号化されます。アプリが診断ログ、位置情報、接続履歴を開発者へ自動送信することはありません。ただし、接続プロトコルや有効にした機能によって、以下に説明する設定やその他のデータが送信される場合があります。</p></li>
+<li><strong>位置情報の利用は任意です</strong><p>許可を得た場合、アプリはアクティブな接続におおよその位置情報を付けます。各接続には最新の位置だけを保存し、移動経路は記録しません。iOS の「設定」で位置情報へのアクセスを無効にできます。</p></li>
+<li><strong>接続にはネットワークアクセスが必要です</strong><p>選択したサーバーは、接続の確立、認証、プロキシ通信に必要なデータを受信します。Apple マップと本サイトのホスティング提供元である GitHub も、サービスの提供に必要なリクエスト情報を処理します。</p></li>
+<li><strong>ローカルデータを削除できます</strong><p>接続記録やプロファイルを削除できます。設定と鍵を削除するには、アプリ内でプロファイルを削除してください。アンインストールだけではキーチェーン項目が残る場合があります。ローカルで削除してもサーバーのログは削除されません。</p></li>
+</ul>
+</section>
+<section aria-labelledby="details-title">
+<h2 id="details-title">データの取り扱い</h2>
+<p class="muted">各見出しを開くと、保存方法、第三者サービス、削除の制限について確認できます。</p>
+<details class="privacy-detail">
+<summary>デバイス内のデータ</summary>
+<div class="detail-content">
+<p>サーバー設定、認証情報、プロキシ設定は、AES-GCM で暗号化した文書に保存されます。文書の鍵は、デバイスに紐付いたシステムのキーチェーン項目に保存されます。プロファイル名、有効状態、文書識別子はアプリのローカル設定に保存されます。アプリが認証パスワードをプロファイル名に挿入することはありません。暗号化された設定ファイルと接続履歴ファイルは、システムのバックアップ対象から除外されます。</p>
+<p>現在のセッションの診断ログは、アプリ内で表示するため、容量を制限したメモリバッファに保持されます。サーバーのアドレス、プロキシ名、タイムスタンプ、エラーが含まれる場合があります。アプリがこれらのログを開発者へ自動送信することはありません。ログの内容をコピーまたは共有した場合、提供した内容は共有相手に渡ります。</p>
+</div>
+</details>
+<details class="privacy-detail">
+<summary>位置情報と接続履歴</summary>
+<div class="detail-content">
+<p>許可を得た場合、接続の開始中または実行中に、おおよその位置情報を接続記録に付けます。各セッションは最新の位置だけを保持し、移動経路、高度、速度、進行方向は保存しません。各プロファイルには、開始時刻、最終アクティビティ時刻、結果を含む直近最大 50 件の記録を保持します。</p>
+<p>これらの記録はローカルで暗号化されます。アプリ自体が位置情報や接続履歴を開発者または frps サーバーへ送信することはありません。地図には Apple MapKit を使用します。Apple の地図サービスに必要なリクエストと処理には、<a href="https://www.apple.com/legal/privacy/">Apple のプライバシーポリシー</a>が適用されます。地図が完全にオフラインで動作することは保証しません。</p>
+<p>iOS の「設定」で位置情報へのアクセスを変更または取り消せます。バックグラウンドの位置情報はアクティブな接続記録に位置を付けるために使用され、接続をバックグラウンドでより長く維持できる場合もあります。許可設定の変更、アプリの強制終了、システムによる終了で、この動作が中断されることがあります。</p>
+</div>
+</details>
+<details class="privacy-detail">
+<summary>ユーザーが選択したサーバー</summary>
+<div class="detail-content">
+<p>プロファイルを有効にすると、接続の確立、認証、プロキシのネゴシエーションに必要なデータが、選択した frps サーバーへ送信されます。frp のログインプロトコルには、OS が返すホスト名、OS の種類、プロセッサのアーキテクチャ、frp のバージョン、ログインのタイムスタンプ、セッション識別子、設定されたユーザー名、クライアント識別子、メタデータが含まれます。iOS が返すホスト名は汎用的な名前の場合があります。これらは接続プロトコルの項目であり、FerryPorts の広告識別子ではありません。サーバーは、設定されたサービスの提供に必要な認証プロトコルのデータやプロキシ設定も受信します。</p>
+<p>サーバーと通信先のエンドポイントは、IP アドレス、接続時刻、設定されたプロキシ通信を受信できます。有効にした機能に応じて、DNS プロバイダはドメインの問い合わせを受信し、OIDC 認証プロバイダは設定されたクライアント認証情報とトークン要求のパラメータを受信します。また、XTCP の NAT トラバーサルでは、ネットワークアドレスを調べるために STUN サービスへ接続します。別の STUN サーバーを設定していない場合、frp は既定で stun.easyvoip.com:3478 を使用します。通常のプロキシ接続には、この XTCP の探索処理は必要ありません。プロキシ、認証、その他のエンドポイントも設定で選択できます。</p>
+<p>インポートした証明書と秘密鍵はアプリのコンテナ内に平文の PEM として保存され、初回ロック解除後に利用できる iOS のデータ保護で保護されます。iCloud と Finder のバックアップ対象からは除外されます。プロファイル文書に適用されるアプリ独自の暗号化は使用しません。これらのファイルは「その他」→「証明書と鍵」で削除してください。プロファイルを削除しても、他のプロファイルと共有されている可能性のある証明書は自動削除されません。外部にある元のファイルやコピーはご自身で管理してください。</p>
+<p>設定された証明書ファイル、token ファイル、静的ファイル配信用ディレクトリは、アプリのコンテナ内に限定されます。この境界を越えるパスやシンボリックリンクは拒否されます。カスタム DNS の問い合わせは、選択した DNS サービスが処理します。</p>
+<p>static_file プラグインを有効にすると、そのサービスへのリクエストにより、設定したディレクトリ内の読み取り可能なファイル、ディレクトリ一覧、サイズや更新日時などのファイルメタデータを取得できます。HTTP レスポンスに Last-Modified ヘッダーが含まれる場合があります。これはユーザーが設定するファイル配信であり、診断情報の分析ではありません。frp の管理用 Web サーバーを有効にした場合、到達可能なクライアントは、選択した認証設定とネットワーク設定に従って接続状態や設定情報を取得できる場合があります。</p>
+<p>データの受信者、暗号化、ログの保存期間、処理は、サーバー、サービス、設定によって異なります。信頼でき、利用権限のあるサーバーだけに接続し、運営者のプライバシーポリシーを確認してください。ローカルに保存することは、ネットワーク送信がないことを意味しません。ネットワーク通信はアプリの主要な機能です。</p>
+</div>
+</details>
+<details class="privacy-detail">
+<summary>データを削除した後に残るものは？</summary>
+<div class="detail-content">
+<p>個別の接続記録を削除したり、履歴を消去したりできます。プロファイルを削除すると、その暗号化された設定文書、接続履歴、文書の鍵が削除されます。通常、アンインストールするとアプリのローカルデータコンテナは削除されますが、iOS のキーチェーン項目は残る場合があります。鍵を削除したい場合は、先にアプリ内でプロファイルを削除してください。ローカルで削除しても、サーバーログ、別の場所に保存したコピー、他のプラットフォームへの投稿は削除されません。</p>
+</div>
+</details>
+<details class="privacy-detail">
+<summary>このサイトの閲覧やお問い合わせでは、どの情報を使用しますか？</summary>
+<div class="detail-content">
+<p>このサイトは GitHub Pages でホストされ、追加の分析スクリプト、広告、追跡 Cookie はありません。GitHub は、<a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub プライバシーステートメント</a>に基づき、ホスティングの提供と保護のために IP アドレスや技術的なリクエスト情報を処理する場合があります。GitHub を通じてお問い合わせいただく場合、GitHub とメンテナーが提供された内容を処理します。公開 Issue は誰でも閲覧できます。<a href="mailto:eric_kwoc@icloud.com">eric_kwoc@icloud.com</a> へメールでお問い合わせいただくこともできます。作者がフィードバックを受け取り、公開せずに対応します。関連するメールサービス提供者は、メールの配信と保存を処理します。認証情報、設定全体、個人の位置情報が写ったスクリーンショットを投稿しないでください。</p>
+</div>
+</details>
+</section>
+<h2>お問い合わせとポリシーの更新</h2>
+<p>プライバシーに関するお問い合わせやデータに関するご依頼は、<a href="mailto:eric_kwoc@icloud.com">eric_kwoc@icloud.com</a> へメールでお送りいただくか、<a href="../ja/support.html">サポートページ</a>をご確認ください。認証情報、設定全体、個人の位置情報が写ったスクリーンショットは送信しないでください。</p>
+<p>ポリシーを変更した場合は、このページに反映し、更新日を変更します。重要な変更については、必要に応じて別途お知らせします。</p>
+</main>
+<footer><span>FerryPorts © 2026 郭耀铭</span><a href="../ja/support.html">お問い合わせとフィードバック</a></footer>
+</body>
+</html>

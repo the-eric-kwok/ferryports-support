@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="FerryPorts のサポート、接続のトラブルシューティング、プライバシーに関するお問い合わせ。">
+<title>サポート · FerryPorts</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="alternate" hreflang="en" href="../en/support.html">
+<link rel="alternate" hreflang="zh-Hans" href="../zh/support.html">
+<link rel="alternate" hreflang="ja" href="../ja/support.html">
+<link rel="alternate" hreflang="ko" href="../ko/support.html">
+<link rel="alternate" hreflang="x-default" href="../en/support.html">
+<link rel="icon" type="image/svg+xml" href="../app-icon.svg">
+<script src="../language-switcher.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#content">本文へスキップ</a>
+<nav aria-label="メインナビゲーション"><a class="brand" href="../ja/index.html"><img class="app-icon" src="../app-icon.svg" width="32" height="32" alt="">FerryPorts</a><a href="../ja/privacy.html">プライバシーポリシー</a><a href="../ja/support.html" aria-current="page">サポート</a>
+<div class="language-switcher">
+<button class="language-trigger" type="button" aria-label="言語を選択 · 日本語" aria-expanded="false" aria-controls="language-options" hidden><span lang="ja">日本語</span><svg class="language-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" focusable="false"><path d="m2 4 4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+<ul class="language-options" id="language-options" aria-label="言語を選択">
+<li><a href="../en/support.html" lang="en" hreflang="en">English</a></li>
+<li><a href="../zh/support.html" lang="zh-Hans" hreflang="zh-Hans">中文</a></li>
+<li><span lang="ja" aria-current="true">日本語<span aria-hidden="true"> ✓</span></span></li>
+<li><a href="../ko/support.html" lang="ko" hreflang="ko">한국어</a></li>
+</ul>
+</div>
+</nav>
+<main id="content" tabindex="-1">
+<p class="eyebrow">ヘルプとサポート</p>
+<h1>サポート</h1>
+<h2>使い始めるには</h2>
+<p>利用権限のある frps サーバーと設定を用意し、FerryPorts でプロファイルを作成して保存し、接続を有効にしてください。プロファイルの詳細で状態やログを確認できます。接続記録に位置情報を付けたい場合にのみ、位置情報へのアクセスを許可してください。</p>
+<h2>接続のトラブルシューティング</h2>
+<p>接続に失敗した場合は、サーバーのアドレス、ポート、認証情報、サーバーの稼働状況、ネットワーク接続を確認してください。一時的な障害では、回数を制限して再試行することがあります。設定を修正した後に「今すぐ再試行」を使ってください。バックグラウンド接続は、iOS、許可設定、ネットワークの状態に左右されます。</p>
+<h2>アプリをバックグラウンドにすると接続が切れる場合は？</h2>
+<p>FerryPorts のバックグラウンドでの位置情報へのアクセスを許可することをお勧めします。iOS の「設定」→「プライバシーとセキュリティ」（旧バージョンの iOS では「プライバシー」）→「位置情報サービス」→「FerryPorts」を開き、「常に」を選択してください。「常に」がまだ表示されない場合は、アプリの確認画面で位置情報へのアクセスを許可してから、もう一度「設定」を確認してください。</p>
+<p>バックグラウンドの位置情報は、アクティブな接続記録におおよその位置を付けるために使用され、接続をバックグラウンドでより長く維持する助けにもなります。ただし、アプリが動作し続けられるかどうかは、iOS のスケジューリングとネットワークの状態に左右されます。アプリスイッチャーからアプリを強制終了しないでください。接続が切れた場合はアプリに戻り、状態とログを確認して「今すぐ再試行」を使ってください。</p>
+<h2>クライアント証明書と秘密鍵をインポートするには？</h2>
+<p>「その他」→「証明書と鍵」→「ファイルをインポート」を開き、PEM 証明書、暗号化されていない秘密鍵、CA ファイルを選択してください。「ファイル」アプリから共有したり、FerryPorts で開いたりすることもできます。<code>.key</code> ファイルを開く候補に FerryPorts が表示されない場合は、拡張子を <code>.pem</code> に変更するか、アプリ内のインポート機能を使ってください。</p>
+<p>各ファイルの上限は 1 MiB です。PKCS#12 と暗号化された秘密鍵には対応していません。信頼できるコンピュータで <code>openssl pkey -in encrypted.key -out private.pem</code> を実行し、パスワードを解除してからインポートしてください。</p>
+<p>証明書または鍵をタップし、「適用先…」でプロファイルを選択すると、対応する TLS 設定を置き換えられます。証明書、秘密鍵、CA ファイルはそれぞれ certFile、keyFile、trustedCaFile を設定し、証明書と鍵を含むファイルは両方を設定します。左にスワイプすると、名前の変更や削除ができます。名前を変更しても拡張子は維持され、プロファイルの参照も更新されます。ファイルを置き換えた後は、影響を受けるプロファイルを再起動してください。</p>
+<p>秘密鍵はアプリのコンテナ内に平文の PEM として保存され、初回ロック解除後に利用できる iOS のデータ保護で保護されます。iCloud と Finder のバックアップ対象からは除外されます。アプリ独自の暗号化やエクスポート機能はありません。外部にある元のファイルはご自身で管理してください。削除する前に、そのファイルを参照するプロファイルについて警告が表示されます。</p>
+<h2>フィードバックとプライバシーに関するお問い合わせ</h2>
+<p><a href="https://github.com/the-eric-kwok/ferryports-support/issues">GitHub Issues</a> またはメール <a href="mailto:eric_kwoc@icloud.com">eric_kwoc@icloud.com</a> でフィードバックをお送りください。GitHub Issues は公開されます。メールは作者に直接届き、公開されません。アプリと iOS のバージョン、再現手順、機密情報を除いたエラー内容を記載してください。認証情報、設定全体、秘密鍵、個人の位置情報、機密情報を含むログは決して投稿しないでください。プライバシーに関するお問い合わせは作者へメールでお送りください。保存と削除については、<a href="../ja/privacy.html">プライバシーポリシー</a>をご確認ください。</p>
+</main>
+<footer><span>FerryPorts © 2026 郭耀铭</span><a href="../ja/support.html">お問い合わせとフィードバック</a></footer>
+</body>
+</html>
