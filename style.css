@@ -36,8 +36,9 @@ li { padding-left: 3px; margin-bottom: 10px; }
 .home h1 { max-width: 640px; font-size: clamp(2.5rem, 6vw, 3.7rem); }
 .lead { font-size: 20px; line-height: 1.7; margin-bottom: 24px; }
 .page-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 16px 24px; margin-top: 32px; }
-.page-actions a:first-child { padding: 10px 20px; background: var(--accent); color: #fff; border-radius: 8px; font-weight: 600; text-decoration: none; }
-.page-actions a:first-child:hover { text-decoration: underline; }
+.page-actions .button { display: inline-flex; align-items: center; min-height: 48px; padding: 0 20px; background: var(--accent); color: #fff; border-radius: 8px; font-weight: 600; text-decoration: none; }
+.page-actions .button:hover { text-decoration: underline; }
+.app-store-badge { display: block; height: 48px; width: auto; }
 footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px 24px; border-top: 1px solid var(--line); padding-top: 22px; color: var(--muted); font-size: 13px; }
 footer a { text-decoration: none; }
 footer a:hover { text-decoration: underline; }
@@ -55,7 +56,7 @@ footer a:hover { text-decoration: underline; }
 
 @media (prefers-color-scheme: dark) {
   :root { color: #e4eaf0; background: #141b22; --muted: #a7b3be; --accent: #8fcddd; --line: #303d48; --soft: #21323b; }
-  .page-actions a:first-child { color: #14252e; }
+  .page-actions .button { color: #14252e; }
 }
 
 .privacy-overview { list-style: none; padding: 0; margin: 24px 0 0; }
