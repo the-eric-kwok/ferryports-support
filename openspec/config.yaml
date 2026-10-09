@@ -1,0 +1,8 @@
+schema: spec-driven
+context: |
+  FerryPorts 支持网站的规格根，与站点代码同仓，随 ferryports-support 仓库提交与发布。
+  应用侧的规格不在本仓库，位于应用仓库的 openspec/ 目录。
+  两边的接口是地址契约：应用通过应用内 Safari 按下述地址打开本站页面，本站负责这些地址必须提供的
+  内容与语言覆盖。地址形如
+  https://the-eric-kwok.github.io/ferryports-support/<lang>/{index,support,privacy}.html
+  <lang> 取 en、zh、zh-Hant、ja、ko；应用当前语言没有对应页面时回退 en。
