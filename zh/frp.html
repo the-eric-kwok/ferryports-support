@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="了解 frp 的用途、frpc 与 frps 如何协作，以及 FerryPorts 在其中的角色，并访问 frp 官方 GitHub 项目。">
+<title>什么是 frp？ · FerryPorts</title>
+<link rel="canonical" href="https://the-eric-kwok.github.io/ferryports-support/zh/frp.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="FerryPorts">
+<meta property="og:title" content="什么是 frp？ · FerryPorts">
+<meta property="og:description" content="了解 frp 的用途、frpc 与 frps 如何协作，以及 FerryPorts 在其中的角色，并访问 frp 官方 GitHub 项目。">
+<meta property="og:url" content="https://the-eric-kwok.github.io/ferryports-support/zh/frp.html">
+<link rel="stylesheet" href="../style.css">
+<link rel="alternate" hreflang="en" href="https://the-eric-kwok.github.io/ferryports-support/en/frp.html">
+<link rel="alternate" hreflang="zh-Hans" href="https://the-eric-kwok.github.io/ferryports-support/zh/frp.html">
+<link rel="alternate" hreflang="zh-Hant" href="https://the-eric-kwok.github.io/ferryports-support/zh-Hant/frp.html">
+<link rel="alternate" hreflang="ja" href="https://the-eric-kwok.github.io/ferryports-support/ja/frp.html">
+<link rel="alternate" hreflang="ko" href="https://the-eric-kwok.github.io/ferryports-support/ko/frp.html">
+<link rel="alternate" hreflang="x-default" href="https://the-eric-kwok.github.io/ferryports-support/en/frp.html">
+<link rel="icon" type="image/svg+xml" href="../app-icon.svg">
+<script src="../language-switcher.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#content">跳至正文</a>
+<nav aria-label="主导航"><a class="brand" href="../zh/index.html"><img class="app-icon" src="../app-icon.svg" width="32" height="32" alt="">FerryPorts</a><a href="../zh/privacy.html">隐私政策</a><a href="../zh/support.html">支持</a>
+<div class="language-switcher">
+<button class="language-trigger" type="button" aria-label="选择语言 · 简体中文" aria-expanded="false" aria-controls="language-options" hidden><span lang="zh-Hans">简体中文</span><svg class="language-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" focusable="false"><path d="m2 4 4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+<ul class="language-options" id="language-options" aria-label="选择语言">
+<li><a href="../en/frp.html" lang="en" hreflang="en">English</a></li>
+<li><span lang="zh-Hans" aria-current="true">简体中文<span aria-hidden="true"> ✓</span></span></li>
+<li><a href="../zh-Hant/frp.html" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a></li>
+<li><a href="../ja/frp.html" lang="ja" hreflang="ja">日本語</a></li>
+<li><a href="../ko/frp.html" lang="ko" hreflang="ko">한국어</a></li>
+</ul>
+</div>
+</nav>
+<main id="content" tabindex="-1">
+<p class="eyebrow">认识 frp</p>
+<h1>什么是 frp？</h1>
+<p class="lead">frp 是一个开源的反向代理工具，帮助你通过公网可访问的服务器，访问 NAT 或防火墙后面的本地服务。</p>
+<p>家庭或办公室网络中的服务，可能无法从互联网直接访问。frp 将这些服务连接到你管理的服务器，由服务器把请求转发给它们。</p>
+<h2>它如何工作？</h2>
+<ul>
+<li><code>frps</code> 是服务端，通常运行在具有公网 IP 地址的服务器上。</li>
+<li><code>frpc</code> 是客户端，它连接到 <code>frps</code>，并能访问你希望对外提供的服务。</li>
+</ul>
+<p>在典型的反向代理场景中，请求先到达 frps，再通过连接传递给 frpc，最终到达配置中指定的服务。</p>
+<h2>可以用来做什么？</h2>
+<ul>
+<li>访问局域网中的网站或 Web 服务。例如，在家里访问公司电脑上运行的 kimi code web 或 deepseek harness。</li>
+<li>通过 SSH、VNC、RDP 远程连接局域网中的电脑。例如，在家里使用公司电脑的终端或远程桌面。</li>
+<li>通过 FTP、SMB 等协议访问 NAS 上的文件。例如，出差时读取家中 NAS 的文档，或把照片备份到 NAS。</li>
+</ul>
+<p>frp 项目支持 TCP、UDP、HTTP、HTTPS 等协议。具体配置取决于服务类型和访问方式。</p>
+<h2>FerryPorts 在其中做什么？</h2>
+<p>FerryPorts 是 iOS 上的 frp 客户端，可以管理连接配置、连接自己的 frps 服务器，以及查看运行状态和日志。</p>
+<p>你需要自行准备有权访问的 frps 服务器及配置。后台运行受 iOS、网络状态和权限限制。设置方法和应用支持的功能，请参阅 FerryPorts 支持指南。</p>
+<h2>进一步了解 frp</h2>
+<p>在官方项目中查看源代码、文档和使用示例。</p>
+<p><a href="https://github.com/fatedier/frp">frp 官方 GitHub 项目</a></p>
+<p class="page-actions"><a class="button" href="../zh/support.html">获取支持</a><a href="../zh/index.html">返回首页</a></p>
+</main>
+<footer><span>FerryPorts © 2026 郭耀铭</span><a href="../zh/support.html">联系与反馈</a></footer>
+</body>
+</html>

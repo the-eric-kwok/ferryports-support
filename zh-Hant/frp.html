@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="了解 frp 的用途、frpc 與 frps 如何協作，以及 FerryPorts 在其中的角色，並造訪 frp 官方 GitHub 專案。">
+<title>什麼是 frp？ · FerryPorts</title>
+<link rel="canonical" href="https://the-eric-kwok.github.io/ferryports-support/zh-Hant/frp.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="FerryPorts">
+<meta property="og:title" content="什麼是 frp？ · FerryPorts">
+<meta property="og:description" content="了解 frp 的用途、frpc 與 frps 如何協作，以及 FerryPorts 在其中的角色，並造訪 frp 官方 GitHub 專案。">
+<meta property="og:url" content="https://the-eric-kwok.github.io/ferryports-support/zh-Hant/frp.html">
+<link rel="stylesheet" href="../style.css">
+<link rel="alternate" hreflang="en" href="https://the-eric-kwok.github.io/ferryports-support/en/frp.html">
+<link rel="alternate" hreflang="zh-Hans" href="https://the-eric-kwok.github.io/ferryports-support/zh/frp.html">
+<link rel="alternate" hreflang="zh-Hant" href="https://the-eric-kwok.github.io/ferryports-support/zh-Hant/frp.html">
+<link rel="alternate" hreflang="ja" href="https://the-eric-kwok.github.io/ferryports-support/ja/frp.html">
+<link rel="alternate" hreflang="ko" href="https://the-eric-kwok.github.io/ferryports-support/ko/frp.html">
+<link rel="alternate" hreflang="x-default" href="https://the-eric-kwok.github.io/ferryports-support/en/frp.html">
+<link rel="icon" type="image/svg+xml" href="../app-icon.svg">
+<script src="../language-switcher.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#content">跳至主要內容</a>
+<nav aria-label="主導覽"><a class="brand" href="../zh-Hant/index.html"><img class="app-icon" src="../app-icon.svg" width="32" height="32" alt="">FerryPorts</a><a href="../zh-Hant/privacy.html">隱私政策</a><a href="../zh-Hant/support.html">支援</a>
+<div class="language-switcher">
+<button class="language-trigger" type="button" aria-label="選擇語言 · 繁體中文" aria-expanded="false" aria-controls="language-options" hidden><span lang="zh-Hant">繁體中文</span><svg class="language-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" focusable="false"><path d="m2 4 4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+<ul class="language-options" id="language-options" aria-label="選擇語言">
+<li><a href="../en/frp.html" lang="en" hreflang="en">English</a></li>
+<li><a href="../zh/frp.html" lang="zh-Hans" hreflang="zh-Hans">简体中文</a></li>
+<li><span lang="zh-Hant" aria-current="true">繁體中文<span aria-hidden="true"> ✓</span></span></li>
+<li><a href="../ja/frp.html" lang="ja" hreflang="ja">日本語</a></li>
+<li><a href="../ko/frp.html" lang="ko" hreflang="ko">한국어</a></li>
+</ul>
+</div>
+</nav>
+<main id="content" tabindex="-1">
+<p class="eyebrow">認識 frp</p>
+<h1>什麼是 frp？</h1>
+<p class="lead">frp 是一個開源的反向代理工具，協助你透過可從公網存取的伺服器，存取 NAT 或防火牆後方的本機服務。</p>
+<p>家庭或辦公室網路中的服務，可能無法從網際網路直接存取。frp 將這些服務連線至你管理的伺服器，由伺服器將請求轉送給它們。</p>
+<h2>它如何運作？</h2>
+<ul>
+<li><code>frps</code> 是伺服器端，通常執行於具有公網 IP 位址的伺服器上。</li>
+<li><code>frpc</code> 是用戶端，它連線至 <code>frps</code>，並可存取你希望對外提供的服務。</li>
+</ul>
+<p>在典型的反向代理情境中，請求先抵達 frps，再透過連線傳送至 frpc，最後抵達設定中指定的服務。</p>
+<h2>可以用來做什麼？</h2>
+<ul>
+<li>存取區域網路中的網站或 Web 服務。例如，在家裡存取公司電腦上執行的 kimi code web 或 deepseek harness。</li>
+<li>透過 SSH、VNC、RDP 遠端連線至區域網路中的電腦。例如，在家裡使用公司電腦的終端機或遠端桌面。</li>
+<li>透過 FTP、SMB 等協定存取 NAS 上的檔案。例如，出差時讀取家中 NAS 的文件，或將照片備份到 NAS。</li>
+</ul>
+<p>frp 專案支援 TCP、UDP、HTTP、HTTPS 等協定。具體設定取決於服務類型和存取方式。</p>
+<h2>FerryPorts 在其中扮演什麼角色？</h2>
+<p>FerryPorts 是 iOS 上的 frp 用戶端，可以管理連線設定、連線至自己的 frps 伺服器，以及查看執行狀態與日誌。</p>
+<p>你需要自行準備有權存取的 frps 伺服器及設定。背景執行受 iOS、網路狀態和權限限制。設定方式和應用程式支援的功能，請參閱 FerryPorts 支援指南。</p>
+<h2>進一步了解 frp</h2>
+<p>在官方專案中查看原始碼、文件和使用範例。</p>
+<p><a href="https://github.com/fatedier/frp">frp 官方 GitHub 專案</a></p>
+<p class="page-actions"><a class="button" href="../zh-Hant/support.html">取得支援</a><a href="../zh-Hant/index.html">返回首頁</a></p>
+</main>
+<footer><span>FerryPorts © 2026 郭耀铭</span><a href="../zh-Hant/support.html">聯絡與回饋</a></footer>
+</body>
+</html>

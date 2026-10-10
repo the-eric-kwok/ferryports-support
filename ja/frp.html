@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="frp の用途、frpc と frps の仕組み、FerryPorts の役割を紹介します。GitHub の frp 公式プロジェクトもご覧ください。">
+<title>frp とは？ · FerryPorts</title>
+<link rel="canonical" href="https://the-eric-kwok.github.io/ferryports-support/ja/frp.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="FerryPorts">
+<meta property="og:title" content="frp とは？ · FerryPorts">
+<meta property="og:description" content="frp の用途、frpc と frps の仕組み、FerryPorts の役割を紹介します。GitHub の frp 公式プロジェクトもご覧ください。">
+<meta property="og:url" content="https://the-eric-kwok.github.io/ferryports-support/ja/frp.html">
+<link rel="stylesheet" href="../style.css">
+<link rel="alternate" hreflang="en" href="https://the-eric-kwok.github.io/ferryports-support/en/frp.html">
+<link rel="alternate" hreflang="zh-Hans" href="https://the-eric-kwok.github.io/ferryports-support/zh/frp.html">
+<link rel="alternate" hreflang="zh-Hant" href="https://the-eric-kwok.github.io/ferryports-support/zh-Hant/frp.html">
+<link rel="alternate" hreflang="ja" href="https://the-eric-kwok.github.io/ferryports-support/ja/frp.html">
+<link rel="alternate" hreflang="ko" href="https://the-eric-kwok.github.io/ferryports-support/ko/frp.html">
+<link rel="alternate" hreflang="x-default" href="https://the-eric-kwok.github.io/ferryports-support/en/frp.html">
+<link rel="icon" type="image/svg+xml" href="../app-icon.svg">
+<script src="../language-switcher.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#content">本文へスキップ</a>
+<nav aria-label="メインナビゲーション"><a class="brand" href="../ja/index.html"><img class="app-icon" src="../app-icon.svg" width="32" height="32" alt="">FerryPorts</a><a href="../ja/privacy.html">プライバシーポリシー</a><a href="../ja/support.html">サポート</a>
+<div class="language-switcher">
+<button class="language-trigger" type="button" aria-label="言語を選択 · 日本語" aria-expanded="false" aria-controls="language-options" hidden><span lang="ja">日本語</span><svg class="language-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" focusable="false"><path d="m2 4 4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+<ul class="language-options" id="language-options" aria-label="言語を選択">
+<li><a href="../en/frp.html" lang="en" hreflang="en">English</a></li>
+<li><a href="../zh/frp.html" lang="zh-Hans" hreflang="zh-Hans">简体中文</a></li>
+<li><a href="../zh-Hant/frp.html" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a></li>
+<li><span lang="ja" aria-current="true">日本語<span aria-hidden="true"> ✓</span></span></li>
+<li><a href="../ko/frp.html" lang="ko" hreflang="ko">한국어</a></li>
+</ul>
+</div>
+</nav>
+<main id="content" tabindex="-1">
+<p class="eyebrow">frp について</p>
+<h1>frp とは？</h1>
+<p class="lead">frp はオープンソースのリバースプロキシツールです。インターネットからアクセスできるサーバーを経由して、NAT やファイアウォールの内側にあるローカルサービスにアクセスできます。</p>
+<p>家庭やオフィスのネットワークにあるサービスには、インターネットから直接アクセスできないことがあります。frp はそのサービスを自分で管理するサーバーに接続し、サーバーがリクエストを転送できるようにします。</p>
+<h2>どのように動作しますか？</h2>
+<ul>
+<li><code>frps</code> はサーバー側のプログラムです。通常、パブリック IP アドレスを持つサーバーで動作します。</li>
+<li><code>frpc</code> はクライアント側のプログラムです。<code>frps</code> に接続し、公開したいサービスにアクセスします。</li>
+</ul>
+<p>一般的なリバースプロキシ構成では、リクエストは frps に届き、接続を通じて frpc に転送され、設定したサービスに届きます。</p>
+<h2>どのような用途がありますか？</h2>
+<ul>
+<li>ローカルネットワーク内の Web サービスにアクセスする。例えば、自宅から会社のコンピュータで動作する kimi code web や deepseek harness にアクセスする。</li>
+<li>SSH、VNC、RDP でローカルネットワーク内のコンピュータにリモート接続する。例えば、自宅から会社のコンピュータのターミナルやリモートデスクトップを利用する。</li>
+<li>FTP、SMB などのプロトコルで NAS のファイルにアクセスする。例えば、出張先から自宅の NAS にある書類を開いたり、写真を NAS にバックアップしたりする。</li>
+</ul>
+<p>frp プロジェクトは TCP、UDP、HTTP、HTTPS などのプロトコルに対応しています。設定はサービスの種類とアクセス方法によって異なります。</p>
+<h2>FerryPorts の役割は？</h2>
+<p>FerryPorts は iOS 向けの frp クライアントです。接続設定を管理し、自分の frps サーバーに接続して、状態やログを確認できます。</p>
+<p>利用権限のある frps サーバーとその設定を自分で用意する必要があります。バックグラウンドでの動作は、iOS、ネットワークの状態、許可設定に左右されます。設定方法やアプリが対応する機能については、FerryPorts のサポートガイドをご覧ください。</p>
+<h2>frp をもっと知る</h2>
+<p>公式プロジェクトでソースコード、ドキュメント、使用例を確認できます。</p>
+<p><a href="https://github.com/fatedier/frp">GitHub の frp 公式プロジェクト</a></p>
+<p class="page-actions"><a class="button" href="../ja/support.html">サポートを利用する</a><a href="../ja/index.html">ホームに戻る</a></p>
+</main>
+<footer><span>FerryPorts © 2026 郭耀铭</span><a href="../ja/support.html">お問い合わせとフィードバック</a></footer>
+</body>
+</html>
